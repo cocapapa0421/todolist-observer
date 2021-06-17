@@ -1,0 +1,62 @@
+.todo__head {
+  margin-bottom: 1.5rem;
+  border: 1px soldi var(--color-gray-5);
+  border-radius: 1rem;
+  padding: 2rem 2rem;
+  background-color: var(--color-gray-3);
+}
+
+.item {
+  border: 1px solid var(--color-gray-3);
+  box-shadow: 0px 6px 14px rgba(42, 42, 47, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  background-color: var(--color-white);
+}
+
+.item + .item {
+  margin-top: 1rem;
+}
+
+.item.is-active .item__content {
+  text-decoration: line-through;
+}
+
+.item__complete {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.item__actions > :not(first-child) {
+  margin-right: 1rem;
+}
+
+.item__complete-label {
+  display: block;
+  border: 2px solid var(--color-gray-5);
+  border-radius: 0.4rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+  line-height: 1.8rem;
+  text-align: center;
+}
+
+.item__complete-label::before {
+  content: "\f00c";
+  display: none;
+  font-size: 1.7rem;
+  font-family: "Line Awesome Free";
+  font-weight: 900;
+  color: var(--color-white);
+}
+
+.item__complete:checked ~ .item__complete-label {
+  border-color: var(--color-success);
+  background-color: var(--color-success);
+}
+
+.item__complete:checked ~ .item__complete-label::before {
+  display: block;
+}
